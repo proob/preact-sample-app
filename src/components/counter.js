@@ -3,30 +3,23 @@ import React from 'preact/compat';
 import { useState, useCallback, useEffect } from 'preact/hooks';
 class Counter extends Component{
 
-	constructor({ initialCount }) {
+	constructor({ init }) {
 		super();
-		this.initialCount = initialCount;
+		this.initialValue = init;
 	}
 
 	render() {
-		const [current, setCurrent] = useState(this.initialCount);
-		const [clicked, setClicked] = useState(null);
+		const [current, setCurrent] = useState(this.initialValue);
 
 		const onClick = useCallback(() => {
 			setCurrent(current + 1);
-			setClicked(true);
 		}, [current]);
 
 		useEffect(() => () => {});
 
 		return (
 			<div>
-				<p>
-					Value: <span>{current}</span>
-				</p>
-				{clicked && <p>You already clicked!</p>}
-				<p>Initial value: {this.initialCount}</p>
-				<button onClick={onClick}>Increase</button>
+				<p><button onClick={onClick}>Increase</button> - Value initial:<span>{this.initialValue}</span>, current:<span>{current}</span></p>
 			</div>
 		);
 	}
