@@ -10,8 +10,8 @@
     "build": "preact build",
     "serve": "preact build && serve build --single",
     "pserve": "preact build && preact serve",
-    "dev": "preact watch -p 8081",
-    "https": "preact watch --https -p 80 --sw true",
+    "dev": "preact watch -H 127.0.0.1 -p 8089",
+    "https": "preact watch --https -H 127.0.0.1 -p 80 --sw",
     "lint": "eslint src",
     "test": "jest"
   },

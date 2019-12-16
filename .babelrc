@@ -5,11 +5,5 @@
         ["preact-cli/babel", { "modules": "commonjs" }]
       ]
     }
-  },
-  "plugins": [
-    ["transform-react-jsx", {
-      "pragma": "h",
-      "pragmaFrag": "\"span\""
-    }]
-  ]
+  }
 }
