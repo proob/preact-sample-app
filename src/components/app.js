@@ -19,8 +19,9 @@ const style = {
 	backgroundColor: '#444444'
 };
 export default class App extends Component {
+	state = { url: '' };
 	handleRoute = e => {
-		this.currentUrl = e.url;
+		this.setState( { url: e.url } );
 	};
 	render() {
 		return (
@@ -32,7 +33,7 @@ export default class App extends Component {
 					<Profile path="/profile/:user" />
 					<Github path="/github/:user?" />
 					<div style={style} default>
-						404! The page at <b>"{window.location.pathname}"</b> was not found!
+						404! The page at <b>"{this.state.url}"</b> was not found!
 					</div>
 				</Router>
 			</div>
